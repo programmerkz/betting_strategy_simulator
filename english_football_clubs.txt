@@ -1,0 +1,21 @@
+Manchester City (C)
+Arsenal
+Manchester United
+Newcastle United
+Liverpool
+Brighton & Hove Albion
+Aston Villa
+Tottenham Hotspur
+Brentford
+Fulham
+Crystal Palace
+Chelsea
+Wolverhampton Wanderers
+West Ham United
+Bournemouth
+Nottingham Forest
+Everton
+Leicester City (R)
+Leeds United (R)
+Southampton (R)
+
