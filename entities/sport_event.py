@@ -3,7 +3,7 @@ import os
 import random
 
 
-FC_NAMES_FILE_NAME = os.path.join('.', 'english_football_clubs.txt')
+FC_NAMES_FILE_NAME = os.path.join('.', 'resources', 'english_football_clubs.txt')
 NORM_RANDOM_N = 3
 NORM_RANDOM_PREC = 4
 

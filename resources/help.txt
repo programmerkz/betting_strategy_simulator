@@ -1,0 +1,7 @@
+Betting Strategy Simulator (ver.0.1)
+
+Mathematical software for profit checking of different betting strategies.
+
+Availbable commands:
+-h, --help:         Show description and full list of parameters
+-s, --simulate:     Simulate hypothesis
