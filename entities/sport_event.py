@@ -1,11 +1,8 @@
 from typing import Optional
-import os
 import random
+import os
 
-
-FC_NAMES_FILE_NAME = os.path.join('.', 'resources', 'english_football_clubs.txt')
-NORM_RANDOM_N = 3
-NORM_RANDOM_PREC = 4
+from settings_bss.conts import SPORT_EVENT_PROB_PREC, FC_NAMES_FILE_NAME
 
 
 class SportEvent:
@@ -21,12 +18,12 @@ class SportEvent:
         assert 0 <= self.prob <= 1
 
     def __repr__(self) -> str:
-        return '{0} [{1:.{3}f} {2:.{3}f}]'.format(self.title, self.prob, 1 - self.prob, NORM_RANDOM_PREC)
+        return '{0} [{1:.{3}f} {2:.{3}f}]'.format(self.title, self.prob, 1 - self.prob, SPORT_EVENT_PROB_PREC)
 
     def _generate_normal_prob(self) -> float:
-        probs = [random.random() for _ in range(NORM_RANDOM_N)]
+        probs = [random.random() for _ in range(SPORT_EVENT_PROB_PREC)]
 
-        return sum(probs) / NORM_RANDOM_N
+        return sum(probs) / SPORT_EVENT_PROB_PREC
 
     def _generate_random_title(self) -> str:
         if not SportEvent._fc:
@@ -43,7 +40,9 @@ class SportEvent:
         return ' - '.join([SportEvent._fc[id_1], SportEvent._fc[id_2]])
 
     def _get_fc_names(self) -> list[str]:
-        with open(FC_NAMES_FILE_NAME, 'r') as f:
+        f_name = os.path.join(*FC_NAMES_FILE_NAME)
+
+        with open(f_name, 'r') as f:
             cont = f.read()
             fc_names: list[str] = []
 

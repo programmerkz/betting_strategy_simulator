@@ -1,8 +1,6 @@
 import random
 from entities.sport_event import SportEvent
-
-
-N_TIMES = 10**6
+from settings_bss.conts import HYPOTHESIS_CHECK_N_TIMES
 
 
 class RealProbHypothesis:
@@ -17,12 +15,12 @@ class RealProbHypothesis:
 
     def simulate(self):
         left, right = 0, 0
-        for _ in range(N_TIMES):
+        for _ in range(HYPOTHESIS_CHECK_N_TIMES):
             if random.random() > self.se.prob:
                 right += 1
             else:
                 left += 1
 
         print('Sport event: ', self.se)
-        print(f'Results after {N_TIMES} simulations:')
-        print('Distribution: ', left / N_TIMES, right / N_TIMES)
+        print(f'Results after {HYPOTHESIS_CHECK_N_TIMES} simulations:')
+        print('Distribution: ', left / HYPOTHESIS_CHECK_N_TIMES, right / HYPOTHESIS_CHECK_N_TIMES)
