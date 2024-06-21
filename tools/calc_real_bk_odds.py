@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     sys.path.append(os.getcwd())
     from tools.calc_margin import calc_margin
-    from settings_bss.conts import SPORT_BET_ODDS_PREC
+    from settings_bss.conts import SPORT_BET_ODDS_PREC, PLAYER_ADAVANTAGE
 
     try:
         args = [float(arg) for arg in sys.argv[1:]]
@@ -22,6 +22,10 @@ if __name__ == '__main__':
 
         print('margin = {0:.{1}f}'.format(calc_margin(args), SPORT_BET_ODDS_PREC))
         print('real odds', ['{0:.{1}f}'.format(r_odd, SPORT_BET_ODDS_PREC) for r_odd in r_odds])
+
+        # player supremence odds (%) = PLAYER_ADAVANTAGE
+        s_odds = [r_odd * (1 + PLAYER_ADAVANTAGE) for r_odd in r_odds]
+        print('super odds', ['{0:.{1}f}'.format(s_odd, SPORT_BET_ODDS_PREC) for s_odd in s_odds])
 
     except TypeError as err:
         print(err)

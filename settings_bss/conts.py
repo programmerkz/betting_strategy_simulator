@@ -6,3 +6,5 @@ SPORT_BET_ODDS_PREC = 4
 FC_NAMES_FILE_NAME: tuple[str] = ('.', 'resources', 'english_football_clubs.txt')
 
 HYPOTHESIS_CHECK_N_TIMES = 10**6
+
+PLAYER_ADAVANTAGE = 0.02
